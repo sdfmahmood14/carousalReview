@@ -10,7 +10,10 @@ img{
 #dash{
     background-color: blue;
     color: blue;
-    height: 1px;
+    height: 3px;
+    width: 50px;
+    margin-top: 10px;
+
 }
 #name{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -33,11 +36,15 @@ img{
     right: 20%;
     top: 30%;
     text-align: center;
+    padding: 20px;
+    box-shadow: 1px 1px 9px 0 #a3a1a1;
 }
 #upper-div{
-    position: absolute;
-    top: 10%;
-    left: 40%
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px
 }
 #left-arrow,#right-arrow {
     margin-right: 10px;
@@ -59,3 +66,8 @@ button:hover{
     background-color: darkgrey;
     
 }
+#title{
+    display: inline-block;
+    margin: 0;
+}
+
