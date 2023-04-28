@@ -3,6 +3,9 @@ const nameEl = document.getElementById("name");
 const reviewEl = document.getElementById("rev");
 const designationEl = document.getElementById("des");
 const randomBtnEl = document.getElementById("random-rev");
+const leftArrowEl = document.getElementById("left-arrow");
+const rightArrowEl = document.getElementById("right-arrow");
+let num =0;
 //console.log(designationEl);
 
 const reviewArray = [
@@ -52,8 +55,31 @@ const reviewGenerator = (index) => {
     //console.log(designationEl.innerText);
   
 };
+
 randomBtnEl.addEventListener("click", () => {
-  const num = Math.floor((Math.random()*4));
+   num = Math.floor((Math.random()*4));
+  console.log(num);
+  reviewGenerator(num);
+  //console.log(reviewVisible);
+});
+
+leftArrowEl.addEventListener("click", () => {
+  if(num>0)
+  num = num-1;
+  else if(num == 0)
+  num = reviewArray.length-1;
+  else
+  num = 0;
+  console.log(num);
+  reviewGenerator(num);
+  //console.log(reviewVisible);
+});
+
+rightArrowEl.addEventListener("click", () => {
+  if(num<reviewArray.length-1)
+  num = num+1;
+  else
+  num = 0;
   console.log(num);
   reviewGenerator(num);
   //console.log(reviewVisible);
