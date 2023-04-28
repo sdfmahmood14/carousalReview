@@ -5,8 +5,7 @@ const designationEl = document.getElementById("des");
 const randomBtnEl = document.getElementById("random-rev");
 const leftArrowEl = document.getElementById("left-arrow");
 const rightArrowEl = document.getElementById("right-arrow");
-let num =0;
-//console.log(designationEl);
+let num = 0;
 
 const reviewArray = [
   {
@@ -22,7 +21,7 @@ const reviewArray = [
     name: "Basim Ahmad",
     designation: "Senior Developer",
     review:
-      "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
+      "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carryI'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
   },
   {
     image:
@@ -30,7 +29,7 @@ const reviewArray = [
     name: "Irtifa Ameel",
     designation: "Intern",
     review:
-      "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
+      "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carryI'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carryI'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
   },
   {
     image:
@@ -38,49 +37,37 @@ const reviewArray = [
     name: "Faraz Mahmood",
     designation: "Manager",
     review:
-      "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
+      "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carryI'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carryI'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carryI'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carryv",
   },
 ];
-//console.log(reviewArray[1].name);
-//let index;
 const reviewGenerator = (index) => {
   console.log(index);
-  
-    imgEl.src = reviewArray[index].image;
-    //console.log(imgEl.src);
-    nameEl.innerHTML = reviewArray[index].name;
-    console.log(nameEl.innerHTML);
-    reviewEl.innerText = reviewArray[index].review;
-    designationEl.innerText = reviewArray[index].designation;
-    //console.log(designationEl.innerText);
-  
+
+  imgEl.src = reviewArray[index].image;
+  nameEl.innerHTML = reviewArray[index].name;
+  console.log(nameEl.innerHTML);
+  reviewEl.innerText = reviewArray[index].review;
+  designationEl.innerText = reviewArray[index].designation;
 };
 
 randomBtnEl.addEventListener("click", () => {
-   num = Math.floor((Math.random()*4));
+  num = Math.floor(Math.random() * 4);
   console.log(num);
   reviewGenerator(num);
-  //console.log(reviewVisible);
 });
 
 leftArrowEl.addEventListener("click", () => {
-  if(num>0)
-  num = num-1;
-  else if(num == 0)
-  num = reviewArray.length-1;
-  else
-  num = 0;
+  if (num > 0) num = num - 1;
+  else if (num == 0) num = reviewArray.length - 1;
+  else num = 0;
   console.log(num);
   reviewGenerator(num);
-  //console.log(reviewVisible);
 });
 
 rightArrowEl.addEventListener("click", () => {
-  if(num<reviewArray.length-1)
-  num = num+1;
-  else
-  num = 0;
+  if (num < reviewArray.length - 1) num = num + 1;
+  else num = 0;
   console.log(num);
   reviewGenerator(num);
-  //console.log(reviewVisible);
 });
+document.addEventListener("DOMContentLoaded", reviewGenerator(0));
