@@ -39,18 +39,22 @@ const reviewArray = [
   },
 ];
 //console.log(reviewArray[1].name);
+//let index;
 const reviewGenerator = (index) => {
-  for (index in reviewArray) {
+  console.log(index);
+  
     imgEl.src = reviewArray[index].image;
     //console.log(imgEl.src);
     nameEl.innerHTML = reviewArray[index].name;
-    //console.log(nameEl.innerHTML);
+    console.log(nameEl.innerHTML);
     reviewEl.innerText = reviewArray[index].review;
     designationEl.innerText = reviewArray[index].designation;
     //console.log(designationEl.innerText);
-  }
+  
 };
 randomBtnEl.addEventListener("click", () => {
-  const reviewVisible = reviewGenerator(1);
+  const num = Math.floor((Math.random()*4));
+  console.log(num);
+  reviewGenerator(num);
   //console.log(reviewVisible);
 });
